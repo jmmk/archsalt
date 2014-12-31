@@ -6,3 +6,4 @@ base:
     - zsh
     - xorg
     - user
+    - aur
