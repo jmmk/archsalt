@@ -1,2 +1,4 @@
-the_silver_searcher:
-  pkg.installed
+packages:
+  pkg.installed:
+    - pkgs:
+      - the_silver_searcher
