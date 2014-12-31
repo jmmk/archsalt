@@ -3,6 +3,6 @@ base:
     - vim
     - tmux
     - packages
-    - xorg
     - zsh
+    - xorg
     - user
