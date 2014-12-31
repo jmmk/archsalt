@@ -13,12 +13,12 @@ check-exists() {
 }
 
 pkg-install() {
-  check-exists $1 || sudo pacman -S $1
+  sudo pacman -S $1 --noconfirm --needed
 }
 
 main() {
   log "Refresh package database"
-  sudo pacman -Syyu
+  sudo pacman -Syyu --no-confirm
 
   log "Install git and reflector if not already installed"
   pkg-install git
