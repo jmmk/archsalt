@@ -25,7 +25,7 @@ main() {
   pkg-install reflector
 
   log "Run reflector to update mirrorlist"
-  sudo reflector --country "United States" -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
+  sudo reflector --country "United States" -l 30 -n 20 -p http --sort rate --save /etc/pacman.d/mirrorlist
 
   log "Run salt bootstrap if not installed"
   check-exists salt-call || curl -Ls https://bootstrap.saltstack.com | sudo sh
