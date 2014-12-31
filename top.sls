@@ -2,3 +2,4 @@ base:
   '*':
     - vim
     - tmux
+    - packages
