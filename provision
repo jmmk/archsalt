@@ -1,0 +1,37 @@
+#! /usr/bin/env bash
+set -eo pipefail
+
+log() {
+  echo "bootstrap: $1"
+}
+
+pkg-install() {
+  which $1 || sudo pacman -S $1
+}
+
+main() {
+  log "Refresh package database"
+  sudo pacman -Syyu
+
+  log "Install git and reflector if not already installed"
+  pkg-install git
+  pkg-install reflector
+
+  log "Run reflector to update mirrorlist"
+  sudo reflector --country "United States" -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
+
+  log "Run salt bootstrap if not installed"
+  which salt-call || curl -L https://bootstrap.saltstack.com | sudo sh
+
+  log "Disable salt-minion service"
+  sudo systemctl disable salt-minion.service
+
+  log "Remove current salt directory and clone salt repo"
+  sudo rm -rf /srv/salt
+  sudo -E git clone --depth 1 https://github.com/jmmk/archsalt /srv/salt
+
+  log "Run salt"
+  sudo salt-call --local state.highstate -l info
+}
+
+main $@
