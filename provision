@@ -1,4 +1,7 @@
 #! /usr/bin/env bash
+#
+## curl -L https://raw.githubusercontent.com/jmmk/archsalt/master/provision | bash
+
 set -eo pipefail
 
 log() {
