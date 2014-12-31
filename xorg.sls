@@ -7,6 +7,7 @@ xorg:
       - mesa-libgl
       - xorg-xinit
       - i3-wm
+      - i3status
       - rxvt-unicode
 
 /home/jmmk/.xinitrc:
