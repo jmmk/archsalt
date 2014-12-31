@@ -5,3 +5,4 @@ base:
     - packages
     - xorg
     - zsh
+    - user
