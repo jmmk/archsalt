@@ -18,7 +18,7 @@ pkg-install() {
 
 main() {
   log "Refresh package database"
-  sudo pacman -Syyu --no-confirm
+  sudo pacman -Syyu --noconfirm
 
   log "Install git and reflector if not already installed"
   pkg-install git
