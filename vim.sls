@@ -1,3 +1,2 @@
 vim:
-  pkg:
-    - installed
+  pkg.installed
