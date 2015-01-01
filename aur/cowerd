@@ -1,0 +1,14 @@
+#! /usr/bin/env bash
+set -eo pipefail
+
+main() {
+  declare package="$1"
+
+  cd "$HOME/build" && cower -d "$package"
+  builddir="$_"
+  cd "$builddir" && $EDITOR PKGBUILD
+  makepkg -si && cd -2 &>/dev/null
+  rm -rf "$builddir"
+}
+
+main "$@"

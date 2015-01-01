@@ -17,3 +17,16 @@ install-cower:
     - cwd: /home/jmmk/build
     - user: jmmk
     - unless: which cower
+
+/usr/local/bin:
+  file.managed:
+    - source: salt://aur/cowerd
+    - user: jmmk
+    - group: jmmk
+    - mode: 644
+
+install-st:
+  cmd.script:
+    - source: salt://aur/install-st
+    - user: jmmk
+    - unless: which st
