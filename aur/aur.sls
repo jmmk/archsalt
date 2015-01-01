@@ -24,9 +24,3 @@ install-cower:
     - user: jmmk
     - group: jmmk
     - mode: 755
-
-install-st:
-  cmd.script:
-    - source: salt://aur/install-st
-    - user: jmmk
-    - unless: which st
