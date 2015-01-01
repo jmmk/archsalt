@@ -18,7 +18,7 @@ install-cower:
     - user: jmmk
     - unless: which cower
 
-/usr/local/bin:
+/usr/local/bin/cowerd:
   file.managed:
     - source: salt://aur/cowerd
     - user: jmmk
