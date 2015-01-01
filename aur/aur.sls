@@ -23,7 +23,7 @@ install-cower:
     - source: salt://aur/cowerd
     - user: jmmk
     - group: jmmk
-    - mode: 644
+    - mode: 755
 
 install-st:
   cmd.script:
