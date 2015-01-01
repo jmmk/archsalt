@@ -12,7 +12,7 @@ xorg:
 
 /home/jmmk/.xinitrc:
   file.managed:
-    - source: salt://xinitrc
+    - source: salt://x11/xinitrc
     - user: jmmk
     - group: jmmk
     - mode: 644

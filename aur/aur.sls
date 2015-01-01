@@ -6,14 +6,14 @@
 
 /home/jmmk/.gnupg/gpg.conf:
   file.managed:
-    - source: salt://gpg.conf
+    - source: salt://aur/gpg.conf
     - user: jmmk
     - group: jmmk
     - mode: 644
 
 install-cower:
   cmd.script:
-    - source: salt://install-cower
+    - source: salt://aur/install-cower
     - cwd: /home/jmmk/build
     - user: jmmk
     - unless: which cower

@@ -3,7 +3,7 @@ zsh:
 
 /home/jmmk/.zshrc:
   file.managed:
-    - source: salt://zshrc
+    - source: salt://zsh/zshrc
     - user: jmmk
     - group: jmmk
     - mode: 644
