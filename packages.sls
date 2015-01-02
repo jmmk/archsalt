@@ -8,3 +8,4 @@ packages:
       - dmenu
       - chromium
       - openssh
+      - xclip
