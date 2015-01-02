@@ -39,6 +39,11 @@ main() {
 
   log "Run salt"
   sudo salt-call --local state.highstate -l info
+
+  log "Install dotfiles"
+  git clone -q --depth 1 https://github.com/jmmk/.dotfiles "$HOME/.dotfiles"
+  "$HOME/.dotfiles/setup"
+  echo 'alias provision="curl -L https://raw.githubusercontent.com/jmmk/archsalt/master/provision | bash"' >> "$HOME/.zshrc"
 }
 
 main "$@"
